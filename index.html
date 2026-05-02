@@ -1,50 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Sama ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@300;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@300;600&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
     <style>
-        :root { --primary-glow: #ff2a5f; --text-main: #ffffff; --text-muted: #ffb3c6; --glass-bg: rgba(255, 255, 255, 0.05); --glass-border: rgba(255, 255, 255, 0.1); }
-        body, html { margin: 0; padding: 0; font-family: 'Poppins', 'Cairo', sans-serif; background: radial-gradient(circle at center, #1f000b 0%, #000000 100%); color: var(--text-main); overflow-x: hidden; height: 100vh; }
-        .bg-glow { position: fixed; width: 450px; height: 450px; background: var(--primary-glow); border-radius: 50%; filter: blur(160px); opacity: 0.15; animation: moveGlow 12s infinite alternate; z-index: 0; }
-        @keyframes moveGlow { 0% { top: -10%; left: -10%; } 100% { top: 50%; left: 70%; } }
-        #login-screen, #main-site, .page-section { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; z-index: 10; transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; background: transparent; overflow-y: auto; padding: 40px 0; }
-        #login-screen { justify-content: center; padding: 0; }
-        #main-site, .page-section { display: none; opacity: 0; transform: scale(0.95); }
-        .glass-panel { background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 60px; border-radius: 30px; border: 1px solid var(--glass-border); box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6); text-align: center; z-index: 20; width: 90%; max-width: 750px; margin: auto; }
-        input[type="password"] { padding: 18px; width: 85%; background: rgba(0, 0, 0, 0.4); color: white; border: 1px solid var(--glass-border); border-radius: 15px; font-size: 1.5rem; text-align: center; margin: 30px 0; outline: none; letter-spacing: 10px; transition: 0.3s; }
-        input[type="password"]:focus { border-color: var(--primary-glow); box-shadow: 0 0 20px rgba(255, 42, 95, 0.4); }
-        .primary-btn { background: linear-gradient(135deg, #ff2a5f, #c9184a); color: white; border: none; padding: 18px 50px; border-radius: 15px; font-size: 1.4rem; font-weight: 600; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 2px; }
-        .counter-wrapper { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
-        .time-box { background: rgba(255, 255, 255, 0.08); border: 1px solid var(--primary-glow); border-radius: 15px; padding: 15px 20px; min-width: 80px; text-align: center; box-shadow: 0 5px 15px rgba(255, 42, 95, 0.2); }
-        .time-box span { display: block; font-size: 2.2rem; font-weight: bold; text-shadow: 0 0 10px var(--primary-glow); }
-        .advanced-player { background: rgba(0, 0, 0, 0.6); border: 1px solid var(--glass-border); border-radius: 20px; padding: 20px 30px; width: 90%; max-width: 600px; margin: 0 auto 40px auto; backdrop-filter: blur(15px); display: flex; flex-direction: column; gap: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .advanced-player select { background: transparent; color: white; border: 1px solid var(--primary-glow); border-radius: 10px; padding: 10px; font-size: 1.1rem; outline: none; cursor: pointer; }
-        .advanced-player select option { background: #111; color: white; }
-        .play-btn { background: var(--primary-glow); color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;}
-        .cards-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; width: 90%; max-width: 1000px; margin: 0 auto; }
-        .card { background: var(--glass-bg); padding: 50px 30px; border-radius: 25px; border: 1px solid var(--glass-border); text-align: center; cursor: pointer; transition: 0.4s; }
-        .card:hover { transform: translateY(-20px) scale(1.05); border-color: var(--primary-glow); }
-        .cake-wrapper { position: relative; margin: 20px auto; width: 400px; height: 400px; cursor: pointer; }
-        .cake-emoji { font-size: 12rem; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: all 1.2s ease; z-index: 2; }
-        .sama-photo { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.1); width: 380px; height: 380px; object-fit: cover; border-radius: 50%; border: 8px solid var(--primary-glow); transition: all 1.2s ease; z-index: 1; opacity: 0; }
-        .cake-wrapper.open .cake-emoji { transform: translate(-50%, -220%); opacity: 0; }
-        .cake-wrapper.open .sama-photo { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-        .back-btn { position: absolute; top: 40px; left: 40px; background: rgba(255, 255, 255, 0.1); border: 1px solid var(--glass-border); color: white; padding: 12px 30px; font-size: 1.2rem; border-radius: 12px; cursor: pointer; z-index: 100; }
+        :root {
+            --primary-glow: #ff2a5f;
+            --text-main: #ffffff;
+            --text-muted: #ffb3c6;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', 'Cairo', sans-serif;
+            background: radial-gradient(circle at center, #1f000b 0%, #000000 100%);
+            color: var(--text-main);
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
+        .bg-glow {
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            background: var(--primary-glow);
+            border-radius: 50%;
+            filter: blur(160px);
+            opacity: 0.15;
+            animation: moveGlow 12s infinite alternate;
+            z-index: 0;
+        }
+
+        @keyframes moveGlow {
+            0% {
+                top: -10%;
+                left: -10%;
+            }
+
+            100% {
+                top: 50%;
+                left: 70%;
+            }
+        }
+
+        #login-screen,
+        #main-site,
+        .page-section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            z-index: 10;
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+            background: transparent;
+            overflow-y: auto;
+            padding: 40px 0;
+        }
+
+        #login-screen {
+            justify-content: center;
+            padding: 0;
+        }
+
+        #main-site,
+        .page-section {
+            display: none;
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 60px;
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            z-index: 20;
+            width: 90%;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        input[type="password"] {
+            padding: 18px;
+            width: 85%;
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 30px 0;
+            outline: none;
+            letter-spacing: 10px;
+            transition: 0.3s;
+        }
+
+        input[type="password"]:focus {
+            border-color: var(--primary-glow);
+            box-shadow: 0 0 20px rgba(255, 42, 95, 0.4);
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, #ff2a5f, #c9184a);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 15px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(255, 42, 95, 0.5);
+        }
+
+        .counter-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--primary-glow);
+            border-radius: 15px;
+            padding: 15px 20px;
+            min-width: 80px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(255, 42, 95, 0.2);
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .time-box p {
+            margin: 5px 0 0 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .advanced-player {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 20px 30px;
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            backdrop-filter: blur(15px);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .player-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .advanced-player select {
+            flex-grow: 1;
+            background: transparent;
+            color: white;
+            border: 1px solid var(--primary-glow);
+            border-radius: 10px;
+            padding: 10px 15px;
+            font-size: 1.1rem;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .advanced-player select option {
+            background: #111;
+            color: white;
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .play-btn {
+            background: var(--primary-glow);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        input[type="range"] {
+            flex-grow: 1;
+            -webkit-appearance: none;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--primary-glow);
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .time-display {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            min-width: 80px;
+            text-align: right;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            padding: 50px 30px;
+            border-radius: 25px;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            cursor: pointer;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card:hover {
+            transform: translateY(-20px) scale(1.05);
+            border-color: var(--primary-glow);
+            box-shadow: 0 20px 40px rgba(255, 42, 95, 0.3);
+        }
+
+        .card-icon {
+            font-size: 5.5rem;
+            margin-bottom: 25px;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .cake-wrapper {
+            position: relative;
+            margin: 20px auto;
+            width: 400px;
+            height: 400px;
+            cursor: pointer;
+        }
+
+        .cake-emoji {
+            font-size: 12rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 2;
+        }
+
+        .sama-photo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            width: 380px;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 8px solid var(--primary-glow);
+            transition: all 1.2s ease;
+            z-index: 1;
+            opacity: 0;
+            box-shadow: 0 0 60px rgba(255, 42, 95, 0.9);
+        }
+
+        .cake-wrapper.open .cake-emoji {
+            transform: translate(-50%, -220%);
+            opacity: 0;
+        }
+
+        .cake-wrapper.open .sama-photo {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .hint-text {
+            color: var(--primary-glow);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-style: italic;
+            animation: pulseHint 1.5s infinite;
+        }
+
+        @keyframes pulseHint {
+            0%, 100% {
+                opacity: 0.4;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            color: white;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border-radius: 12px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .back-btn:hover {
+            background: var(--primary-glow);
+        }
     </style>
 </head>
 
 <body>
+
     <div class="bg-glow"></div>
 
-    <audio id="bg-music" src="wayah.mp3"></audio>
+    <audio id="bg-music">
+        <source id="music-source" src="wayah.mp3" type="audio/mpeg">
+    </audio>
 
     <div id="login-screen">
         <div class="glass-panel">
-            <h2 style="font-family: 'Dancing Script', cursive; font-size: 4rem;">A Pure Gift Awaits...</h2>
-            <p>Unlock the magic by entering the secret date</p>
+            <h2 style="font-family: 'Dancing Script', cursive; font-size: 4rem; margin-bottom: 0;">A Pure Gift Awaits...</h2>
+            <p style="letter-spacing: 3px; font-weight: 300; margin-top: 5px;">Unlock the magic by entering the secret date</p>
             <input type="password" id="pwd" placeholder="DD/MM/YYYY">
             <br>
             <button class="primary-btn" onclick="checkPassword()">Unlock the Experience</button>
@@ -52,8 +403,8 @@
     </div>
 
     <div id="main-site">
-        <h1 style="font-size: 3.5rem; text-shadow: 0 0 30px var(--primary-glow); margin-top: 20px;">Happy Birthday Sama 🎉</h1>
-        
+        <h1 style="font-size: 3.5rem; text-shadow: 0 0 30px var(--primary-glow); margin-bottom: 20px; margin-top: 20px;">Happy Birthday Sama 🎉</h1>
+        <h3 style="color: var(--text-muted); font-weight: 300; margin-bottom: 15px;">Building Memories Since July 10, 2025 ❤️</h3>
         <div class="counter-wrapper">
             <div class="time-box"><span id="c-years">0</span><p>Years</p></div>
             <div class="time-box"><span id="c-days">0</span><p>Days</p></div>
@@ -63,7 +414,7 @@
         </div>
 
         <div class="advanced-player">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="player-top">
                 <span style="font-size: 1.5rem; margin-right: 10px;">🎵</span>
                 <select id="song-selector" onchange="changeSong()">
                     <option value="wayah.mp3">Amr Diab - Wayah</option>
@@ -71,60 +422,64 @@
                     <option value="elgamal.mp3">El Gamal Addy El Kalam</option>
                 </select>
             </div>
-            <div style="display: flex; align-items: center; gap: 15px; width: 100%;">
+            <div class="player-controls">
                 <button class="play-btn" id="play-pause-btn" onclick="togglePlay()">⏸</button>
-                <input type="range" id="seek-bar" value="0" step="1" oninput="seekAudio()" style="flex-grow: 1;">
-                <div id="time-display" style="font-size: 0.9rem; color: var(--text-muted);">0:00 / 0:00</div>
+                <input type="range" id="seek-bar" value="0" step="1" oninput="seekAudio()">
+                <div class="time-display" id="time-display">0:00 / 0:00</div>
             </div>
         </div>
 
         <div class="cards-container">
-            <div class="card" onclick="openPage('page-message')"><div style="font-size: 5.5rem;">💌</div><div style="font-size: 1.8rem; font-weight: 600;">The Message</div></div>
-            <div class="card" onclick="openPage('page-cake')"><div style="font-size: 5.5rem;">🎂</div><div style="font-size: 1.8rem; font-weight: 600;">The Surprise</div></div>
-            <div class="card" onclick="openPage('page-flowers')"><div style="font-size: 5.5rem;">🌹</div><div style="font-size: 1.8rem; font-weight: 600;">The Flowers</div></div>
-            <div class="card" onclick="openPage('page-memories')"><div style="font-size: 5.5rem;">📸</div><div style="font-size: 1.8rem; font-weight: 600;">The Memories</div></div>
+            <div class="card" onclick="openPage('page-message')"><div class="card-icon">💌</div><div class="card-title">The Message</div></div>
+            <div class="card" onclick="openPage('page-cake')"><div class="card-icon">🎂</div><div class="card-title">The Surprise</div></div>
+            <div class="card" onclick="openPage('page-flowers')"><div class="card-icon">🌹</div><div class="card-title">The Flowers</div></div>
+            <div class="card" onclick="openPage('page-memories')"><div class="card-icon">📸</div><div class="card-title">The Memories</div></div>
         </div>
         <br><br>
     </div>
 
     <div id="page-cake" class="page-section">
         <button class="back-btn" onclick="goBack()">🔙 Back Home</button>
-        <div class="glass-panel" style="background: transparent; border: none; box-shadow: none;">
+        <div class="glass-panel" style="background: transparent; border: none; box-shadow: none; backdrop-filter: none; padding-top: 100px;">
             <h2 style="text-shadow: 0 0 20px #fff; font-size: 3.5rem;">Make a Secret Wish! ✨</h2>
+            <p class="hint-text">"Click on the cake to reveal your gift..."</p>
             <div class="cake-wrapper" onclick="openCake()">
                 <div class="cake-emoji">🎂</div>
                 <img src="sama.jpg" alt="Sama" class="sama-photo">
+            </div>
+            <div class="english-message" style="font-size: 1.8rem; color: var(--primary-glow); font-weight: 600; text-shadow: 0 0 10px rgba(0,0,0,1);">
+                "Happy Birthday to the most beautiful soul! ❤️"
             </div>
         </div>
     </div>
 
     <div id="page-message" class="page-section">
         <button class="back-btn" onclick="goBack()">🔙 Back Home</button>
-        <div class="glass-panel">
+        <div class="glass-panel" style="margin-top: 60px;">
             <h2 style="color: var(--primary-glow);">A Special Dedication ❤️</h2>
-            <p style="color: white; font-size: 1.5rem; line-height: 2;">
+            <p style="color: white; font-size: 1.5rem; line-height: 2; font-weight: 300;">
                 Kol sana w enti tayeba ya ahla 7aga fe 7ayaty ❤️<br>
                 Enti msh bas sa7bety… enti okhty w kol el 7agat el helwa elly 7asaletly.<br>
                 Rabena y5aleeki lya dayman w yfar7 albik zay ma betfar7e alby keda 🤍<br><br>
-                Happy Birthday ya ro7 alby 🎉🎈
+                <strong style="color: var(--primary-glow); font-size: 1.8rem; text-shadow: 0 0 10px rgba(255, 42, 95, 0.5);">Happy Birthday ya ro7 alby 🎉🎈</strong>
             </p>
         </div>
     </div>
 
     <div id="page-flowers" class="page-section">
         <button class="back-btn" onclick="goBack()">🔙 Back Home</button>
-        <div class="glass-panel">
+        <div class="glass-panel" style="margin-top: 60px;">
             <div style="font-family: 'Dancing Script', cursive; font-size: 3rem; color: var(--text-muted);">For the rarest flower...</div>
-            <div style="font-size: 7rem; margin: 35px 0;">🌹</div>
-            <p style="font-size: 1.5rem;">"Your presence makes the world bloom." ❤️</p>
+            <div style="font-size: 7rem; margin: 35px 0; filter: drop-shadow(0 0 20px var(--primary-glow));">🌹</div>
+            <p style="font-size: 1.5rem; color: #fff; line-height: 1.8;">"Every flower has a story, but none as beautiful as yours. I brought these virtual roses to remind you that your presence makes the world bloom." ❤️</p>
         </div>
     </div>
 
     <div id="page-memories" class="page-section">
         <button class="back-btn" onclick="goBack()">🔙 Back Home</button>
-        <div class="glass-panel">
+        <div class="glass-panel" style="margin-top: 60px;">
             <h2 style="color: var(--primary-glow);">Infinite Memories 🎞️</h2>
-            <p style="font-size: 2.2rem; color: white; font-style: italic; margin-top: 50px;">“Until we meet and create our memories together ❤️”</p>
+            <p style="font-size: 2.2rem; color: white; font-style: italic; margin-top: 50px; text-shadow: 0 0 15px var(--primary-glow);">“Until we meet and create our memories together ❤️”</p>
         </div>
     </div>
 
@@ -132,15 +487,24 @@
         const startDate = new Date("2025-07-10T00:00:00");
         function updateCounter() {
             const now = new Date();
-            let diff = Math.floor((now - startDate) / 1000); 
+            let diff = Math.floor((now - startDate) / 1000);
             if (diff < 0) diff = 0;
-            document.getElementById('c-years').innerText = Math.floor(diff / (365*24*60*60));
-            document.getElementById('c-days').innerText = Math.floor((diff % (365*24*60*60)) / (24*60*60));
-            document.getElementById('c-hours').innerText = Math.floor((diff % (24*60*60)) / (60*60));
-            document.getElementById('c-mins').innerText = Math.floor((diff % (60*60)) / 60);
-            document.getElementById('c-secs').innerText = diff % 60;
+            const years = Math.floor(diff / (365 * 24 * 60 * 60));
+            diff -= years * 365 * 24 * 60 * 60;
+            const days = Math.floor(diff / (24 * 60 * 60));
+            diff -= days * 24 * 60 * 60;
+            const hours = Math.floor(diff / (60 * 60));
+            diff -= hours * 60 * 60;
+            const mins = Math.floor(diff / 60);
+            const secs = diff % 60;
+            document.getElementById('c-years').innerText = years;
+            document.getElementById('c-days').innerText = days;
+            document.getElementById('c-hours').innerText = hours;
+            document.getElementById('c-mins').innerText = mins;
+            document.getElementById('c-secs').innerText = secs;
         }
-        setInterval(updateCounter, 1000); updateCounter();
+        setInterval(updateCounter, 1000);
+        updateCounter();
 
         const audio = document.getElementById('bg-music');
         const playBtn = document.getElementById('play-pause-btn');
@@ -150,7 +514,7 @@
         function formatTime(seconds) {
             let min = Math.floor(seconds / 60);
             let sec = Math.floor(seconds % 60);
-            return `${min}:${sec < 10 ? '0'+sec : sec}`;
+            return `${min}:${sec < 10 ? '0' + sec : sec}`;
         }
 
         audio.addEventListener('timeupdate', () => {
@@ -171,9 +535,12 @@
             if (audio.paused) { audio.play(); playBtn.innerText = "⏸"; } 
             else { audio.pause(); playBtn.innerText = "▶️"; } 
         }
-        
+
         function changeSong() {
-            audio.src = document.getElementById('song-selector').value;
+            const selector = document.getElementById('song-selector');
+            const source = document.getElementById('music-source');
+            source.src = selector.value;
+            audio.load();
             audio.play();
             playBtn.innerText = "⏸";
         }
@@ -181,39 +548,41 @@
         function checkPassword() {
             const pwd = document.getElementById('pwd').value;
             if (pwd.includes('14') && pwd.includes('5') && pwd.includes('2006')) {
-                audio.play().then(() => {
-                    playBtn.innerText = "⏸";
-                }).catch(e => console.log("Audio waiting for user"));
-
+                audio.play().then(() => { playBtn.innerText = "⏸"; }).catch(e => console.log("User interaction required"));
                 document.getElementById('login-screen').style.opacity = '0';
                 setTimeout(() => {
                     document.getElementById('login-screen').style.display = 'none';
-                    document.getElementById('main-site').style.display = 'flex';
-                    setTimeout(() => { document.getElementById('main-site').style.opacity = '1'; }, 50);
+                    const main = document.getElementById('main-site');
+                    main.style.display = 'flex';
+                    setTimeout(() => { main.style.opacity = '1'; main.style.transform = 'scale(1)'; }, 50);
                 }, 800);
-            } else { alert('Wrong date!'); }
+            } else { alert('Incorrect date! Please try again.'); }
         }
 
         function openPage(id) {
             document.getElementById('main-site').style.opacity = '0';
             setTimeout(() => {
                 document.getElementById('main-site').style.display = 'none';
-                document.getElementById(id).style.display = 'flex';
-                setTimeout(() => { document.getElementById(id).style.opacity = '1'; }, 50);
+                const pg = document.getElementById(id);
+                pg.style.display = 'flex';
+                setTimeout(() => { pg.style.opacity = '1'; pg.style.transform = 'scale(1)'; }, 50);
             }, 500);
         }
 
         function goBack() {
-            document.querySelectorAll('.page-section').forEach(p => { p.style.opacity = '0'; });
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(p => { p.style.opacity = '0'; p.style.transform = 'scale(0.95)'; });
             setTimeout(() => {
-                document.querySelectorAll('.page-section').forEach(p => p.style.display = 'none');
+                pages.forEach(p => p.style.display = 'none');
                 document.querySelector('.cake-wrapper').classList.remove('open');
-                document.getElementById('main-site').style.display = 'flex';
-                setTimeout(() => { document.getElementById('main-site').style.opacity = '1'; }, 50);
+                const main = document.getElementById('main-site');
+                main.style.display = 'flex';
+                setTimeout(() => { main.style.opacity = '1'; main.style.transform = 'scale(1)'; }, 50);
             }, 500);
         }
 
         function openCake() { document.querySelector('.cake-wrapper').classList.add('open'); }
     </script>
 </body>
+
 </html>
